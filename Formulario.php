@@ -6,7 +6,6 @@
 <?php
 session_start();
 session_destroy();
-//Hacer un formulario con codigo=100 y password = udg y enviarlo a //sesion.php, desde sesion pueden regresar a formulario
 echo "<table>";
 echo "<tr>";
 echo "<td>Codigo</td>";

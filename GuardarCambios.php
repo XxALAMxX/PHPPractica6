@@ -3,6 +3,7 @@
 session_start();
 require_once('Conexion.php');
 require_once('Contactos.php');
+$Id=$_POST['Id'];
 $Nombre = $_POST['txtNombre'];
 $Ap = $_POST['txtAp'];
 $Am=$_POST['txtAm'];
@@ -17,8 +18,8 @@ $Domicilio=$_POST['txtDomicilio'];
             {
                 throw new Exception($conexion->getError());
             }
-            $sql = "INSERT INTO usuarios (Nombre, Apellido_P, Apellido_M, Telefono, Celular, Domicilio, Edad)"."VALUES". "('$Nombre','$Ap','$Am','$Telefono','$Celular','$Domicilio','$Edad')";
-         	$resultado = $conexion->mysqli->query($sql);
+            $sql = "UPDATE  usuarios SET Nombre='$Nombre',Apellido_P='$Ap',Apellido_M='$Am',Telefono='$Telefono',Celular='$Celular',Domicilio='$Domicilio',Edad='$Edad' WHERE Id='$Id'";
+            $resultado = $conexion->mysqli->query($sql);
             $conexion->cerrar();
         }
         catch(Exception $e)

@@ -13,7 +13,7 @@ class Contacto
             {
                 throw new Exception($conexion->getError());
             }
-            $sql = "SELECT * FROM contacto";
+            $sql = "SELECT * FROM usuarios";
             if ($result = $conexion->mysqli->query($sql))
             {
                 if ($result->num_rows > 0) 
@@ -32,7 +32,7 @@ class Contacto
             return array();
         } 
     }
-
+    
     public function nuevo()
     {
         try
